@@ -1,7 +1,8 @@
 #!/bin/sh
-cc = gcc
+cc=gcc
 install:
-	cp config.def.h config.h
-	cc -o montecarlo.c montecarlo
+	[ ! -f config.h ] && cp config.def.h config.h
+	cc MonteCarlo.c -o montecarlo
 	chmod +x montecarlo
- 
+clean:
+uninstall:
