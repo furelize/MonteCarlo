@@ -1,1 +1,14 @@
+Lightweight MonteCarlo simulator written in the lords language c.
+
+Install instructions gnu/linux
+Prerequisits musl/glibc, busybox/standard gnu utils, gnu make, gcc.
+Commands:
+make install
+
+Install instructions windows (not recommended)
+Commands:
+wsl --install debian
+wsl 
+sudo apt install build-essentials gcc git
+make install
 
