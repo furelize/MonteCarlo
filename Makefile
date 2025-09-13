@@ -5,3 +5,4 @@ install:
 	chmod +x montecarlo
 clean:
 uninstall:
+	rm montecarlo
