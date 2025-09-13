@@ -2,6 +2,10 @@
 #include <stdio.h>
 #include "config.h"
 #include <stdbool.h>
-void main() {
+#include <ncurses.h>
+#include <stdlib.h>
+
+
+int main() {
 	printf("Welcome to the simulator\n");
 }
