@@ -10,12 +10,12 @@ int main() {
 	printf("Welcome to the simulator\n");
 	printf("Do you want to use modern terminal mode or legacy gui mode, yes or no?\n");
 	char userchoiceinter[100];
-	fgets(userchoicegui, 10, stdin);
+	fgets(userchoiceinter, 10, stdin);
 	switch (userchoiceinter) {
 		case (strcmp(userchoiceinter, yes)==0):
 			guiinterface()
 			break:
-		case (strcmp(userchoiceguinter, no)==0):
+		case (strcmp(userchoiceinter, no)==0):
 			terminalinterface()
 			break:
 		default:
