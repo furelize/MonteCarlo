@@ -17,7 +17,7 @@ int main() {
 	} else if (strcmp(userchoiceinter, "no")==0) {
 		//terminalinterface();
 	} else {
-		printf("please give a valid response");
+		printf("please give an valid response");
 	}
 }
 //void guiinterface() {
