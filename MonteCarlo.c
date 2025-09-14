@@ -13,14 +13,14 @@ int main() {
 	fgets(userchoiceinter, 10, stdin);
 	// 'cklig nested if men finns inget b'ttre.
 	if (strcmp(userchoiceinter, "yes")==0) {
-		guiinterface();
+		//guiinterface();
 	} else if (strcmp(userchoiceinter, "no")==0) {
-		terminalinterface();
+		//terminalinterface();
 	} else {
 		printf("please give a valid response");
 	}
 }
-void guiinterface() {
-}
-void terminainterface() {
-}
+//void guiinterface() {
+//}
+//void terminainterface() {
+//}
