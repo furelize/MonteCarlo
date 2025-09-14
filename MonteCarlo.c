@@ -12,9 +12,9 @@ int main() {
 	char userchoiceinter[100];
 	fgets(userchoiceinter, 10, stdin);
 	// 'cklig nested if men finns inget b'ttre.
-	if (strcmp(userchoiceinter, yes)==0) {
+	if (strcmp(userchoiceinter, "yes")==0) {
 		guiinterface()
-	} else if (strcmp(userchoiceinter, no)==0) {
+	} else if (strcmp(userchoiceinter, "no")==0) {
 		terminalinterface()
 	} else {
 		printf("please give a valid response");
