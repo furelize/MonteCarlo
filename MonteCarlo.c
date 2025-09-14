@@ -11,14 +11,12 @@ int main() {
 	printf("Do you want to use modern terminal mode or legacy gui mode, yes or no?\n");
 	char userchoiceinter[100];
 	fgets(userchoiceinter, 10, stdin);
-	switch (userchoiceinter) {
-		case (strcmp(userchoiceinter, yes)==0):
-			guiinterface()
-			break:
-		case (strcmp(userchoiceinter, no)==0):
-			terminalinterface()
-			break:
-		default:
+	// 'cklig nested if men finns inget b'ttre.
+	if (strcmp(userchoiceinter, yes)==0) {
+		guiinterface()
+	} else if (strcmp(userchoiceinter, no)==0) {
+		terminalinterface()
+	} else {
 		printf("please give a valid response");
 	}
 }
