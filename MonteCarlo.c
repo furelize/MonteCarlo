@@ -11,7 +11,7 @@ int main() {
 	printf("Do you want to use modern terminal mode or legacy gui mode, yes or no?\n");
 	char userchoiceinter[100];
 	fgets(userchoicegui, 10, stdin);
-	switch (userchoicegui) {
+	switch (userchoiceinter) {
 		case (strcmp(userchoiceinter, yes)==0):
 			guiinterface()
 			break:
