@@ -9,12 +9,17 @@
 int main() {
 	printf("Welcome to the simulator\n");
 	printf("Do you want to use modern ter mode or legacy gui?\n");
-	char userchoiceinterface[4];
+	char userchoiceinterface[3];
 	while ((strcmp(userchoiceinterface,"ter") !=  0) && (strcmp(userchoiceinterface,"gui") != 0 )) {
-		fgets(userchoiceinterface, 4, stdin);
+		fgets(userchoiceinterface, 3, stdin);
 		if ((strcmp(userchoiceinterface,"gui") !=  0) && (strcmp(userchoiceinterface,"ter") != 0 )) {
 			printf("please give an valid response ");
 	}
+	}
+	if (strcmp(userchoiceinterface,"gui")) {
+		// guinterface();
+	} else {
+		//terminalinterface();
 	}
 }
 //void guiinterface() {
