@@ -10,7 +10,7 @@ Prerequisites hyprv
 Commands:
 wsl --install debian
 wsl 
-sudo apt install build-essentials gcc git
+sudo apt install ncurses-dev build-essentials gcc git
 make install
 
-To disable ncurses support change the enablencurses variable in config.h
+To disable ncurses support disable the use flag.
