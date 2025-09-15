@@ -8,12 +8,12 @@
 
 int main() {
 	printf("Welcome to the simulator\n");
-	printf("Do you want to use modern terminal mode or legacy gui mode, yes or not?\n");
-	char userchoiceinterface[3];
-	while ((strcmp(userchoiceinterface,"ter") !=  0) || (strcmp(userchoiceinterface,"gui") != 0 )) {
-	fgets(userchoiceinterface, 3, stdin);
-	if ((strcmp(userchoiceinterface,"gui") !=  0) || (strcmp(userchoiceinterface,"ter") != 0 )) {
-		printf("please give an valid response ");
+	printf("Do you want to use modern ter mode or legacy gui?\n");
+	char userchoiceinterface[4];
+	while ((strcmp(userchoiceinterface,"ter") !=  0) && (strcmp(userchoiceinterface,"gui") != 0 )) {
+		fgets(userchoiceinterface, 4, stdin);
+		if ((strcmp(userchoiceinterface,"gui") !=  0) && (strcmp(userchoiceinterface,"ter") != 0 )) {
+			printf("please give an valid response ");
 	}
 	}
 }
