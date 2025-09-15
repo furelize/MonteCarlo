@@ -12,6 +12,7 @@ int guiinterface() {
 	refresh();
 	getch();
 	endwin();
+	return 0;
 }
 int terminalinterface() {
 	printf("please enter the directory of the data ");
