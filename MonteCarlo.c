@@ -18,6 +18,7 @@ int terminalinterface() {
 	printf("please enter the directory of the data ");
 	char simdirectory[200];
 	fgets(simdirectory, 200, stdin);
+	return 0;
 }
 int main() {
 	printf("Welcome to the simulator\n");
