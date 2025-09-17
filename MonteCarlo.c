@@ -8,13 +8,14 @@
 int main() {
 	printf("Welcome to the simulator\n");
 	printf("Do you want to use modern ter mode or legacy gui?\n");
-	char userchoiceinterface[10];
+	char userchoiceinterface[4];
 	fgets(userchoiceinterface, 4, stdin); 	
 	while (1) {
 		if ((strcmp(userchoiceinterface,"gui") !=  0) && (strcmp(userchoiceinterface,"ter") != 0 )) {
 			strcpy(userchoiceinterface,"");
 			printf("please give an valid response ");
 			fgets(userchoiceinterface, 4, stdin);
+			userchoiceinterface[4]='\0';
 	} else {
 		break;
 	}

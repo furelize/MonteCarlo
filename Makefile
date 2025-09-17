@@ -1,5 +1,5 @@
 #!/bin/sh
-cc=gcc
+cc = gcc
 install:
 	test -f config.h || cp config.def.h config.h
 	cc MonteCarlo.c -lncurses
