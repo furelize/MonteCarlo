@@ -7,14 +7,14 @@ namespace Init
         {
             Console.Clear();
             Console.WriteLine("Welcome to the simulator!");
-            Console.WriteLine("Please select the correct alternative");
-            Console.WriteLine("1. Simulator");
-            Console.WriteLine("2. Credits");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("Please select the correct alternative:");
+            Console.WriteLine("Simulator.");
+            Console.WriteLine("Credits.");
+            Console.WriteLine("Exit.");
             string userchoicestr = Console.ReadLine();
             while (userchoicestr != "Exit" && userchoicestr != "Simulator" && userchoicestr != "Credits")
             {
-                Console.WriteLine("Please give valid input");
+                Console.WriteLine("Please give valid input.");
                 userchoicestr = Console.ReadLine();
             }
             switch (userchoicestr)
@@ -33,19 +33,23 @@ namespace Init
             static void Credits()
             {
                 Console.Clear();
-                Console.WriteLine("Written by Sebastian Warnholtz and Samuel Sylvan");
+                Console.WriteLine("Written by Sebastian Warnholtz and Samuel Sylvan.");
+                Console.WriteLine("Supervised by Robban, licensed under the gnu public license.");
             }
             
             static void simulator()
             {
                 Console.Clear();
-                Console.WriteLine("Enter the data file using ~ (standard linux filesystem is the only accepted format)");
+                Console.WriteLine("Enter the data file using ~ (the standard linux filesystem is the only accepted format).");
                 string Datadir = Console.ReadLine();
                 while (File.Exists(Datadir))
                 {
-                    Console.WriteLine("Please link to a file that exists and that you have the correct permissions for");
+                    Console.WriteLine("Please link to a file that exists and that you have the correct permissions for.");
                     Datadir = Console.ReadLine();
                 }
+                Console.Clear();
+                
+
             }
     }
 }

@@ -1,10 +1,8 @@
 #!/bin/sh
-cc = gcc
-install:
-	test -f config.h || cp config.def.h config.h
-	cc MonteCarlo.c -lncurses
-	mv a.out montecarlo
-	chmod +x montecarlo
+build:
+	dotnet build
 clean:
+run:
+	dotnet run
 uninstall:
-	rm montecarlo
+	rm -rf obj/ bin/
