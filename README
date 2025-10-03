@@ -1,16 +1,11 @@
-Lightweight MonteCarlo simulator written in the lords language c.
+Lightweight MonteCarlo simulator written in c sharp.
 
 Install instructions gnu/linux
-Prerequisites musl/glibc, busybox/standard gnu utils, gnu make, gcc.
+Prerequisites dotnet-sdk
 Commands:
-make install
+dotnet build
 
 Install instructions windows (not recommended)
-Prerequisites hyprv
+Prerequisites dotnet
 Commands:
-wsl --install debian
-wsl 
-sudo apt install ncurses-dev build-essentials gcc git
-make install
-
-To disable ncurses support disable the use flag.
+dotnet build
