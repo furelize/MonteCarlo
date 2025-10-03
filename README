@@ -1,4 +1,4 @@
-Lightweight MonteCarlo simulator written in c sharp.
+Lightweight MonteCarlo simulator written in c#.
 
 Install instructions gnu/linux
 Prerequisites dotnet-sdk
