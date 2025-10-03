@@ -38,17 +38,41 @@ namespace Init
             }
             
             static void simulator()
-            {
-                Console.Clear();
-                Console.WriteLine("Enter the data file using ~ (the standard linux filesystem is the only accepted format).");
-                string Datadir = Console.ReadLine();
-                while (File.Exists(Datadir))
+            {   
+                Console.WriteLine("Do you want to submit a file.");
+                string userchoicedata = Console.ReadLine();
+                if (userchoicedata == "yes")
                 {
-                    Console.WriteLine("Please link to a file that exists and that you have the correct permissions for.");
-                    Datadir = Console.ReadLine();
+                    Console.WriteLine("How many files do you want to input");
+                    int numberdatafiles = Convert.ToInt32(Console.ReadLine());
+                    string[] Datadir = new string[numberdatafiles];
+                    string userchoicedatavalid = "no";
+                    for (int i = 0; i < numberdatafiles; i++)
+                    {
+                        userchoicedatavalid = "no";
+                        while (userchoicedatavalid != "yes")
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Enter the data file using using the standard linux filesystem as a reference.");
+                            Datadir[i] = Console.ReadLine();
+                            while (!(File.Exists(Datadir[i])))
+                            {
+                                Console.WriteLine("Please link to a file that exists and that you have the correct permissions for.");
+                                Console.WriteLine("If you are sure that the file exists and that you can access it try inputing it in the ~ format.");
+                                Datadir[i] = Console.ReadLine();
+                            }
+                            Console.WriteLine($"Is the information correct: '{Datadir[i]}', yes or no?");
+                            userchoicedatavalid = Console.ReadLine();
+                            while (userchoicedata != "yes" && userchoicedata != "no")
+                            {
+                                Console.WriteLine("please give appropiate answear!");
+                                userchoicedatavalid = Console.ReadLine();
+                            }
+                        }
+                    }
                 }
                 Console.Clear();
-                
+
 
             }
     }
