@@ -85,24 +85,30 @@ namespace Init
                         }
                     }
                 }
-                Console.Clear();
-                Console.WriteLine("Loading!");
                 for (int i = 0; i < 181; i++)
                 {
+                    Console.Clear();
                     int [,] square = {{0,0,5,5}, {0,5,5,0}, {0, 0, 0, 0}};
                     int [,] rotationmatrix = {{Math.Cos(i), -Math.Sin(i), 0}, {Math.Sin(i), Math.Cos(i), 0}, {0, 0, 1}};
-                    int [,] result = MatrixMultiplier(rotationmatrix,square); 
+                    int [,] result = MatrixMultiplier(rotationmatrix, square); 
+                    for (int x = 0; x < 5; x++)
+                    {
+                        Console.SetCursorPosition(result[0,x],result[1,x]);
+                        Console.WriteLine("#");
+                        Thread.Sleep(100);
+                    }
+                    
                 }
 
             }
-            static void MatrixMultiplier(Matrix1, Matrix2)
+            static void MatrixMultiplier(int [,] Matrix1, int [,] Matrix2)
             {
-                int [,] resultmatrix = {{}, {}, {}, {}};
-                for (int i = 0; i<4; x++)
+                int [,] resultmatrix = {{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0}};
+                for (int y = 0; y<4; y++)
                 {
                     for (int x = 0; x<5; x++)
                     {
-                        resultmatrix[i,x] = {Matrix1[i,0]*Matrix2[0,x]+Matrix1[i,1]*Matrix2[1,x]+Matrix1[i,2]*Matrix2[2,x]}
+                        resultmatrix[y, x] = Matrix1[y, 0]*Matrix2[0, x]+Matrix1[y, 1]*Matrix2[1, x]+Matrix1[y, 2]*Matrix2[2, x];
                     }
                 }
                     return resultmatrix;
