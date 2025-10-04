@@ -86,6 +86,13 @@ namespace Init
                     }
                 }
                 Console.Clear();
+                Console.WriteLine("Loading!");
+                for (i = 0; i < 181; i++)
+                {
+                    int [,] square = {{0,0,5,5}, {0,5,5,0}, {0, 0, 0}};
+                    int [,] rotationmatrix = {{cos(i), -sin(i), 0}, {sin(i), cos(i), 0}, {0, 0, 1}};
+                    int [,] result = Vector.Multiply(rotationmatrix, square); 
+                }
 
             }
     }
