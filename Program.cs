@@ -64,7 +64,7 @@ namespace Init
                             while (!(File.Exists(Datadir[i])))
                             {
                                 Console.WriteLine("Please link to a file that exists and that you have the correct permissions for");
-                                Console.WriteLine("If you are sure that the file exists and that you can access it try inputing it in the ~ format");
+                                Console.WriteLine("If you are sure that the file exists and that you can access it try inputing it in the / format");
                                 Datadir[i] = Console.ReadLine();
                             }
                             Console.WriteLine($"Is the information correct: '{Datadir[i]}', yes or no?");
@@ -78,7 +78,6 @@ namespace Init
                     }
                 }
                 Console.Clear();
-
 
             }
     }
