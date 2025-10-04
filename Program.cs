@@ -87,13 +87,25 @@ namespace Init
                 }
                 Console.Clear();
                 Console.WriteLine("Loading!");
-                for (i = 0; i < 181; i++)
+                for (int i = 0; i < 181; i++)
                 {
-                    int [,] square = {{0,0,5,5}, {0,5,5,0}, {0, 0, 0}};
-                    int [,] rotationmatrix = {{cos(i), -sin(i), 0}, {sin(i), cos(i), 0}, {0, 0, 1}};
-                    int [,] result = Vector.Multiply(rotationmatrix, square); 
+                    int [,] square = {{0,0,5,5}, {0,5,5,0}, {0, 0, 0, 0}};
+                    int [,] rotationmatrix = {{Math.Cos(i), -Math.Sin(i), 0}, {Math.Sin(i), Math.Cos(i), 0}, {0, 0, 1}};
+                    int [,] result = MatrixMultiplier(rotationmatrix,square); 
                 }
 
+            }
+            static void MatrixMultiplier(Matrix1, Matrix2)
+            {
+                int [,] resultmatrix = {{}, {}, {}, {}};
+                for (int i = 0; i<4; x++)
+                {
+                    for (int x = 0; x<5; x++)
+                    {
+                        resultmatrix[i,x] = {Matrix1[i,0]*Matrix2[0,x]+Matrix1[i,1]*Matrix2[1,x]+Matrix1[i,2]*Matrix2[2,x]}
+                    }
+                }
+                    return resultmatrix;
             }
     }
 }
