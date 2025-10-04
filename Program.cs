@@ -42,14 +42,22 @@ namespace Init
                 Console.WriteLine("Do you want to submit a file");
                 string userchoicedata = Console.ReadLine();
                 if (userchoicedata == "yes")
-                {
-                    Console.WriteLine("How many files do you want to input (only number supported)");
-                    string numberdatafiles = Console.ReadLine();
-                    int test; //only for testing 
-                    while (!(int.TryParse(numberdatafiles, out test)))
+                {   
+                    string numberdatafiles = "200"; // kan lägga till mer control logic men orkar ej
+                    while ((Convert.ToInt32(numberdatafiles) > 100))
                     {
-                        Console.WriteLine("Give a real number");
+                        Console.WriteLine("How many files do you want to input (only number supported)");
                         numberdatafiles = Console.ReadLine();
+                        int test; //only for testing
+                        while (!(int.TryParse(numberdatafiles, out test)))
+                        {
+                            Console.WriteLine("Give a real number");
+                            numberdatafiles = Console.ReadLine();
+                        }
+                        if (Convert.ToInt32(numberdatafiles) > 100)
+                        {
+                            Console.WriteLine("please enter a real number under 100");
+                        }
                     }
                     string[] Datadir = new string[Convert.ToInt32(numberdatafiles)];
                     string userchoicedatavalid = "no";
