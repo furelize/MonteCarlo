@@ -45,14 +45,15 @@ namespace Init
                 {
                     Console.WriteLine("How many files do you want to input (only number supported)");
                     string numberdatafiles = Console.ReadLine();
-                    while (!(int.TryParse(numberdatafiles)))
+                    int test; //only for testing 
+                    while (!(int.TryParse(numberdatafiles, out test)))
                     {
                         Console.WriteLine("Give a real number");
                         numberdatafiles = Console.ReadLine();
                     }
                     string[] Datadir = new string[Convert.ToInt32(numberdatafiles)];
                     string userchoicedatavalid = "no";
-                    for (int i = 0; i < numberdatafiles; i++)
+                    for (int i = 0; i < Convert.ToInt32(numberdatafiles); i++)
                     {
                         userchoicedatavalid = "no";
                         while (userchoicedatavalid != "yes")
