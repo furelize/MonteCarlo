@@ -85,7 +85,7 @@ namespace Init
                         }
                     }
                 }
-                rotatingrectangle(3,5,100,2,"#");
+                rotatingrectangle();
                 for (int i = 0; i < Convert.ToInt32(numberdatafiles)+6; i++)
                 {
                     loadingbar(10,i+13);
