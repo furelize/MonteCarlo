@@ -87,7 +87,7 @@ namespace Init
                 }
                 rotatingrectangle(3);
                 Console.Clear();
-                for (int i = 0; i < Convert.ToInt32(numberdatafiles)+4; i++)
+                for (int i = 0; i < Convert.ToInt32(numberdatafiles)+10; i++)
                 {
                     loadingbar(10,i);
                 }
