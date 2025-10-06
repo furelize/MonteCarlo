@@ -41,10 +41,10 @@ namespace Init
             {   
                 Console.WriteLine("Do you want to submit a file");
                 string userchoicedata = Console.ReadLine();
+                string numberdatafiles = "0";
                 if (userchoicedata == "yes")
-                {   
-                    string numberdatafiles = "1000"; // kan lägga till mer control logic men orkar ej
-                    while ((Convert.ToInt32(numberdatafiles) > 100))
+                {
+                    while ((Convert.ToInt32(numberdatafiles) > 100) || (Convert.ToInt32(numberdatafiles) == 0))
                     {
                         Console.WriteLine("How many files do you want to input (only number supported)");
                         numberdatafiles = Console.ReadLine();
