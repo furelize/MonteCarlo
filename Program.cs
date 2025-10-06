@@ -84,38 +84,68 @@ namespace Init
                             }
                         }
                     }
-                } else 
-                {
-                    string numberdatafiles = "0";
                 }
-                
-                for (int i = 0; i < 181; i++)
+                rotatingrectangle(3);
+                Console.Clear();
+                for (int i = 0; i < Convert.ToInt32(numberdatafiles)+4; i++)
                 {
-                    Console.Clear();
-                    int [,] square = {{0,0,5,5}, {0,5,5,0}, {0, 0, 0, 0}};
-                    int [,] rotationmatrix = {{Math.Cos(i), -Math.Sin(i), 0}, {Math.Sin(i), Math.Cos(i), 0}, {0, 0, 1}};
-                    int [,] result = MatrixMultiplier(rotationmatrix, square); 
-                    for (int x = 0; x < 5; x++)
-                    {
-                        Console.SetCursorPosition(result[0,x],result[1,x]);
-                        Console.WriteLine("#");
-                        Thread.Sleep(100);
-                    }
-                    
+                    loadingbar(10,i);
                 }
 
+
             }
-            static void MatrixMultiplier(int [,] Matrix1, int [,] Matrix2)
+            static void loadingbar(int time, int positiony)
             {
-                int [,] resultmatrix = {{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0}};
-                for (int y = 0; y<4; y++)
+                for (int i = 1; i < 51; i++)
                 {
-                    for (int x = 0; x<5; x++)
+                    Console.SetCursorPosition(0,positiony);
+                    Console.WriteLine("[");
+                    
+                    if (i != 50)
                     {
-                        resultmatrix[y, x] = Matrix1[y, 0]*Matrix2[0, x]+Matrix1[y, 1]*Matrix2[1, x]+Matrix1[y, 2]*Matrix2[2, x];
+                        Console.SetCursorPosition(i,positiony);
+                        Console.WriteLine("#");
+                    } else 
+                    {
+                        Console.SetCursorPosition(i,positiony);
+                        Console.WriteLine("]");
+                        Console.SetCursorPosition(i+2,positiony);
+                        Console.WriteLine("100%");
                     }
+                    Thread.Sleep(time);
+                    
                 }
-                    return resultmatrix;
+            }
+            static void rotatingrectangle(int time)
+            {
+                for (int d = 0; d < 360*time; d++)
+                {   
+                    Console.Clear();
+                    int k = 1;
+                    int x = Math.Abs(Convert.ToInt32(Math.Cos(d*Math.PI/180)*5));
+                    for (int a = 0; a < 2; a++)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {              
+                            Console.SetCursorPosition(k*x+5,i);
+                            Console.WriteLine("#");
+                        }
+                        for (int j = x; j > -1; j-- )
+                        {
+                            Console.SetCursorPosition(k*j+5,5);
+                            Console.WriteLine("#");
+                            Console.SetCursorPosition(k*j+5,0);
+                            Console.WriteLine("#");
+                        }
+                        k = -1;
+                    }
+                    Console.SetCursorPosition(12,0);
+                    Console.WriteLine("Calculating Data!");
+                    Thread.Sleep(10);
+                }
+            }
+            static void MonteCarlo(int numberofdatafiles, string[] datadirectory)
+            {
             }
     }
 }
