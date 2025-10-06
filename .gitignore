@@ -3,3 +3,8 @@ bin/*
 .vs/*
 obj/*
 .vscode/*
+MonteCarlo
+MonteCarlo.deps.json
+MonteCarlo.dll
+MonteCarlo.pdb
+MonteCarlo.runtimeconfig.json
