@@ -43,8 +43,8 @@ namespace Init
                 string userchoicedata = Console.ReadLine();
                 if (userchoicedata == "yes")
                 {   
-                    string numberdatafiles = "200"; // kan lägga till mer control logic men orkar ej
-                    while ((Convert.ToInt32(numberdatafiles) > 100))
+                    string numberdatafiles = "0"; // kan lägga till mer control logic men orkar ej
+                    while ((Convert.ToInt32(numberdatafiles) > 100) && Convert.ToInt32(numberdatafiles) != 0)
                     {
                         Console.WriteLine("How many files do you want to input (only number supported)");
                         numberdatafiles = Console.ReadLine();
