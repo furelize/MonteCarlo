@@ -85,11 +85,10 @@ namespace Init
                         }
                     }
                 }
-                rotatingrectangle(3);
-                Console.Clear();
-                for (int i = 0; i < Convert.ToInt32(numberdatafiles)+10; i++)
+                rotatingrectangle(3,5,100,2,"#");
+                for (int i = 0; i < Convert.ToInt32(numberdatafiles)+6; i++)
                 {
-                    loadingbar(10,i);
+                    loadingbar(10,i+13);
                 }
                 Console.WriteLine("Data Successfully initialized!");
 
@@ -117,32 +116,42 @@ namespace Init
                     
                 }
             }
-            static void rotatingrectangle(int time)
+            static void rotatingrectangle(int rotations, int radie, int delay, int tjocklek, string character)
             {
-                for (int d = 0; d < 360*time; d++)
+                for (int d = 0; d < 360*rotations; d = d+20)
                 {   
+                    if (tjocklek > radie/2)
+                    {
+                        return;
+                    }
                     Console.Clear();
                     int k = 1;
-                    int x = Math.Abs(Convert.ToInt32(Math.Cos(d*Math.PI/180)*5));
+                    int x = Math.Abs(Convert.ToInt32(Math.Cos(d*Math.PI/180)*Math.Abs(radie)));
                     for (int a = 0; a < 2; a++)
                     {
-                        for (int i = 0; i < 6; i++)
+                        for (int i = 0; i < radie+tjocklek; i++)
                         {              
-                            Console.SetCursorPosition(k*x+5,i);
-                            Console.WriteLine("#");
+                            for (int c = 0; c < tjocklek; c++)
+                            {
+                                Console.SetCursorPosition(k*x+Math.Abs(radie)-k*c,i);
+                                Console.WriteLine($"{character}");
+                            }
                         }
                         for (int j = x; j > -1; j-- )
                         {
-                            Console.SetCursorPosition(k*j+5,5);
-                            Console.WriteLine("#");
-                            Console.SetCursorPosition(k*j+5,0);
-                            Console.WriteLine("#");
+                            for (int b = 0; b < tjocklek; b++)
+                            {
+                                Console.SetCursorPosition(k*j+Math.Abs(radie),Math.Abs(radie)+b+tjocklek);
+                                Console.WriteLine($"{character}");
+                                Console.SetCursorPosition(k*j+Math.Abs(radie),b);
+                                Console.WriteLine($"{character}");
+                            }
                         }
                         k = -1;
                     }
-                    Console.SetCursorPosition(12,0);
+                    Console.SetCursorPosition(2*Math.Abs(radie)+2,0);
                     Console.WriteLine("Calculating Data!");
-                    Thread.Sleep(10);
+                    Thread.Sleep(delay);
                 }
             }
             static void MonteCarlo(int numberofdatafiles, string[] datadirectory)
