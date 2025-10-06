@@ -91,6 +91,7 @@ namespace Init
                 {
                     loadingbar(10,i);
                 }
+                Console.WriteLine("Data Successfully initialized!");
 
 
             }
