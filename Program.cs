@@ -1,4 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System;
+using System.Drawing;
+using System.Drawing.Printing;
+using System.Windows;
+
 namespace Init
 {
     class Start
@@ -20,7 +25,7 @@ namespace Init
             switch (userchoicestr)
             {
                 case "Simulator":
-                    simulator();
+                    interfacechoice();
                     break;
                 case "Credits":
                     Credits();
@@ -36,8 +41,24 @@ namespace Init
                 Console.WriteLine("Written by Sebastian Warnholtz and Samuel Sylvan");
                 Console.WriteLine("Supervised by Robban, licensed under the gnu public license");
             }
-            
-            static void simulator()
+            static void interfacechoice()
+            {   
+                Console.WriteLine("Do you want to use a gui or a tui");
+                string userchoicegui = Console.ReadLine(); 
+                while ((userchoicegui != "gui") && (userchoicegui != "tui"))
+                {
+                    Console.WriteLine("Please giva a valid answear!");
+                    userchoicegui = Console.ReadLine();
+                }
+                if (userchoicegui == "gui")
+                {
+                    Guisimulator();
+                } else 
+                {
+                    Tuisimulator();
+                }
+            }
+            static void Tuisimulator()
             {   
                 Console.WriteLine("Do you want to submit a file");
                 string userchoicedata = Console.ReadLine();
@@ -85,14 +106,18 @@ namespace Init
                         }
                     }
                 }
-                rotatingrectangle();
+		int radie = 20;
+                rotatingrectangle(30, radie, 6);
                 for (int i = 0; i < Convert.ToInt32(numberdatafiles)+6; i++)
                 {
-                    loadingbar(10,i+21);
+                    loadingbar(10,i+radie+1);
                 }
                 Console.WriteLine("Data Successfully initialized!");
 
 
+            }
+            static void Guisimulator()
+            {
             }
             static void loadingbar(int time, int positiony)
             {
@@ -116,32 +141,32 @@ namespace Init
                     
                 }
             }
-            static void rotatingrectangle()
+            static void rotatingrectangle(int time, int diameter, int rotations)
             {
-                for (int d = 0; d < 360*4; d = d+5)
+                for (int d = 0; d < 360*rotations; d = d+5)
                 {   
                     Console.Clear();
                     int k = 1;
-                    int x = Math.Abs(Convert.ToInt32(Math.Cos(d*Math.PI/180)*20));
+                    int x = Math.Abs(Convert.ToInt32(Math.Cos(d*Math.PI/180)*diameter));
                     for (int a = 0; a < 2; a++)
                     {
-                        for (int i = 0; i < 20; i++)
+                        for (int i = 1; i < diameter; i++)
                         {                      
-                            Console.SetCursorPosition(k*x+20,i);
+                            Console.SetCursorPosition(k*x+diameter,i);
                             Console.WriteLine("#");
                         }
                         for (int j = x; j > -1; j-- )
                         {
-                            Console.SetCursorPosition(k*j+20,20);
+                            Console.SetCursorPosition(k*j+diameter,diameter);
                             Console.WriteLine("#");
-                            Console.SetCursorPosition(k*j+20,0);
+                            Console.SetCursorPosition(k*j+diameter,0);
                             Console.WriteLine("#");
                         }
                         k = -1;
                     }
-                    Console.SetCursorPosition(2*Math.Abs(20)+2,0);
+                    Console.SetCursorPosition(2*diameter+2,0);
                     Console.WriteLine("Calculating Data!");
-                    Thread.Sleep(30);
+                    Thread.Sleep(time);
                 }
             }
             static void MonteCarlo(int numberofdatafiles, string[] datadirectory)
