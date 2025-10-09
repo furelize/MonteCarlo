@@ -143,7 +143,7 @@ namespace Init
             }
             static void rotatingrectangle(int time, int diameter, int rotations)
             {
-                for (int d = 0; d < 360*rotations; d = d+5)
+                for (int d = 0; d < 360*rotations+95; d = d+5)
                 {   
                     Console.Clear();
                     int x = Math.Abs(Convert.ToInt32(Math.Cos(d*Math.PI/180)*diameter));
