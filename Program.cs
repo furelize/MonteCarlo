@@ -146,23 +146,20 @@ namespace Init
                 for (int d = 0; d < 360*rotations; d = d+5)
                 {   
                     Console.Clear();
-                    int k = 1;
                     int x = Math.Abs(Convert.ToInt32(Math.Cos(d*Math.PI/180)*diameter));
-                    for (int a = 0; a < 2; a++)
+                    for (int i = 0; i < diameter+1; i++)
+                    {                      
+                        Console.SetCursorPosition(x,i);
+                        Console.WriteLine("#");
+                        Console.SetCursorPosition(diameter*2-x,i);
+                        Console.WriteLine("#");
+                    }
+                    for (int j = x; j < diameter*2-x; j++ )
                     {
-                        for (int i = 1; i < diameter; i++)
-                        {                      
-                            Console.SetCursorPosition(k*x+diameter,i);
-                            Console.WriteLine("#");
-                        }
-                        for (int j = x; j > -1; j-- )
-                        {
-                            Console.SetCursorPosition(k*j+diameter,diameter);
-                            Console.WriteLine("#");
-                            Console.SetCursorPosition(k*j+diameter,0);
-                            Console.WriteLine("#");
-                        }
-                        k = -1;
+                        Console.SetCursorPosition(j,diameter);
+                        Console.WriteLine("#");
+                        Console.SetCursorPosition(j,0);
+                        Console.WriteLine("#");
                     }
                     Console.SetCursorPosition(2*diameter+2,0);
                     Console.WriteLine("Calculating Data!");
